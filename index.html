@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇫🇷 Meta Monitor Armée — Expertise Complète</title>
+<title>🇫🇷 Meta Monitor — Expertise Complète Multi-Secteurs</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.11.2/dist/dsfr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -119,6 +119,7 @@ body{font-family:var(--font-sans);background:var(--grey-50);color:var(--grey-900
 .rc-badge.xlsx{background:#ffe9b8;color:#7a4d00}
 .rc-badge.other{background:var(--grey-100);color:var(--grey-700)}
 .rc-badge.alert{background:var(--red-marianne);color:var(--white)}
+.rc-badge.theme{background:#e3e3fd;color:var(--blue-france)}
 .rc-desc{font-size:12px;color:var(--grey-700);line-height:1.55;margin-bottom:8px}
 .rc-meta{display:flex;gap:6px;font-family:var(--font-mono);font-size:10px;color:var(--grey-500);flex-wrap:wrap;margin-top:8px}
 .rc-meta .tag{background:var(--grey-50);padding:3px 8px;border-radius:3px;border:1px solid var(--grey-200);color:var(--grey-700)}
@@ -132,7 +133,6 @@ body{font-family:var(--font-sans);background:var(--grey-50);color:var(--grey-900
 .expert-header .sub code{background:var(--grey-100);padding:1px 6px;border-radius:3px;
   font-family:var(--font-mono);font-size:10px;color:var(--grey-700)}
 
-/* Actions globales */
 .global-actions{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;background:var(--white);
   border-bottom:1px solid var(--grey-200)}
 .action-btn{padding:8px 14px;border-radius:4px;font-size:12px;font-weight:600;cursor:pointer;
@@ -238,7 +238,6 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .corr-row .val.pos{background:#b8fec9;color:#0d5726}
 .corr-row .val.neg{background:#ffd4d4;color:#99000b}
 
-/* ⭐ PII */
 .pii-list{display:flex;flex-direction:column;gap:8px}
 .pii-row{background:#fff8e6;border-left:3px solid var(--yellow-tournesol);
   padding:8px 10px;border-radius:4px;font-size:11px;display:flex;gap:10px;align-items:flex-start}
@@ -250,7 +249,6 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .pii-row .pii-sample{font-family:var(--font-mono);color:var(--grey-500);font-size:10px;margin-top:4px;
   background:var(--grey-50);padding:4px 6px;border-radius:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-/* ⭐ SURVEILLANCE */
 .alerts-list{display:flex;flex-direction:column;gap:6px;max-height:400px;overflow-y:auto}
 .alert-item{background:var(--white);border:1px solid var(--grey-200);border-left:4px solid var(--yellow-tournesol);
   padding:10px 12px;border-radius:4px;cursor:pointer;transition:.15s}
@@ -263,7 +261,6 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .alert-item .severity.crit{background:var(--red-marianne-soft);color:var(--red-marianne)}
 .alert-item .reason{font-size:11px;color:var(--grey-700);margin-top:2px}
 
-/* ⭐ COMPARAISON */
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .compare-panel{background:var(--white);border:1px solid var(--grey-200);border-radius:6px;padding:12px}
 .compare-panel h4{font-size:11px;font-weight:700;color:var(--blue-france);text-transform:uppercase;
@@ -313,7 +310,6 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .info-row .k{color:var(--grey-700)}
 .info-row .v{font-family:var(--font-mono);font-weight:700;color:var(--grey-900);text-align:right;max-width:60%}
 
-/* Toast notification */
 .toast{position:fixed;bottom:20px;right:20px;background:var(--blue-france);color:var(--white);
   padding:12px 18px;border-radius:6px;font-size:13px;font-weight:600;
   box-shadow:0 8px 24px rgba(0,0,145,.25);z-index:10000;
@@ -322,7 +318,6 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .toast.error{background:var(--red-marianne)}
 @keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
 
-/* Modal */
 .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);
   display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px}
 .modal{background:var(--white);border-radius:8px;max-width:700px;width:100%;
@@ -332,6 +327,15 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 .modal-close{background:transparent;border:none;font-size:24px;cursor:pointer;color:var(--grey-500);padding:0 8px}
 .modal-body{padding:20px;overflow-y:auto;flex:1}
 .modal-foot{padding:14px 20px;border-top:1px solid var(--grey-200);display:flex;gap:8px;justify-content:flex-end}
+
+/* Indicateur de chargement multi-fichiers */
+.loading-files{display:flex;flex-direction:column;gap:6px;padding:20px;max-width:500px;margin:0 auto}
+.loading-file{display:flex;justify-content:space-between;padding:6px 12px;background:var(--white);
+  border:1px solid var(--grey-200);border-radius:4px;font-size:12px;font-family:var(--font-mono)}
+.loading-file .name{color:var(--grey-700)}
+.loading-file .status-ok{color:var(--green-bourgeon);font-weight:700}
+.loading-file .status-err{color:var(--red-marianne);font-weight:700}
+.loading-file .status-load{color:#8a5e00;font-weight:700}
 </style>
 </head>
 <body>
@@ -345,8 +349,8 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 <div class="topbar">
   <div class="brand">
     <span class="dot" id="statusDot"></span>
-    META MONITOR ARMÉE
-    <span class="sub">/ expertise complète</span>
+    META MONITOR
+    <span class="sub">/ expertise multi-secteurs</span>
   </div>
   <div class="topbar-right">
     <div class="topbar-stat"><span>DATA</span><span class="val green" id="tbStatus">—</span></div>
@@ -368,7 +372,10 @@ table.preview td.number{color:var(--blue-france);text-align:right}
 
   <main class="center">
     <div class="search-bar">
-      <input type="text" id="queryInput" placeholder="🔍 Rechercher un jeu de données armée…">
+      <input type="text" id="queryInput" placeholder="🔍 Rechercher un jeu de données…">
+      <select id="themeSelect">
+        <option value="">🌍 Tous les thèmes</option>
+      </select>
       <select id="sortSelect">
         <option value="resources">📎 Nb ressources</option>
         <option value="popularity">⭐ Popularité</option>
@@ -402,7 +409,7 @@ table.preview td.number{color:var(--blue-france);text-align:right}
     </div>
 
     <div class="results" id="resultsArea">
-      <div class="loading-state"><div class="spin"></div>Chargement de army.json…</div>
+      <div class="loading-state"><div class="spin"></div>Chargement des fichiers JSON…</div>
     </div>
   </main>
 
@@ -412,8 +419,10 @@ table.preview td.number{color:var(--blue-france);text-align:right}
       <div class="intel-panel">
         <div class="intel-head">💚 ÉTAT GLOBAL</div>
         <div class="intel-body">
+          <div class="info-row"><span class="k">Fichiers chargés</span><span class="v" id="ivFiles">—</span></div>
           <div class="info-row"><span class="k">Jeux</span><span class="v" id="ivTotal">—</span></div>
           <div class="info-row"><span class="k">Ressources</span><span class="v" id="ivRes">—</span></div>
+          <div class="info-row"><span class="k">Thèmes</span><span class="v" id="ivThemes">—</span></div>
           <div class="info-row"><span class="k">Formats</span><span class="v" id="ivFormats">—</span></div>
           <div class="info-row"><span class="k">Score conformité</span><span class="v" id="ivScore">—</span></div>
           <div class="info-row"><span class="k">Alertes</span><span class="v" id="ivAlerts">—</span></div>
@@ -478,6 +487,27 @@ const CHART_OPTS = {
 };
 
 // ====================================================================
+// FICHIERS JSON À CHARGER
+// ====================================================================
+const JSON_FILES = [
+  { file: 'json/agriculture.json',  label: 'Agriculture',   icon: '🌾' },
+  { file: 'json/army.json',         label: 'Armée',         icon: '⚔️' },
+  { file: 'json/culture.json',      label: 'Culture',       icon: '🎭' },
+  { file: 'json/ecologie.json',     label: 'Écologie',      icon: '🌿' },
+  { file: 'json/education.json',    label: 'Éducation',     icon: '🎓' },
+  { file: 'json/enseignement.json', label: 'Enseignement',  icon: '📚' },
+  { file: 'json/europe.json',       label: 'Europe',        icon: '🇪🇺' },
+  { file: 'json/finances.json',     label: 'Finances',      icon: '💰' },
+  { file: 'json/industrie.json',    label: 'Industrie',     icon: '🏭' },
+  { file: 'json/interieur.json',    label: 'Intérieur',     icon: '🚔' },
+  { file: 'json/justice.json',      label: 'Justice',       icon: '⚖️' },
+  { file: 'json/logements.json',    label: 'Logements',     icon: '🏠' },
+  { file: 'json/santé.json',        label: 'Santé',         icon: '💊' },
+  { file: 'json/sport.json',        label: 'Sport',         icon: '⚽' },
+  { file: 'json/travail.json',      label: 'Travail',       icon: '💼' }
+];
+
+// ====================================================================
 // ÉTAT
 // ====================================================================
 const state = {
@@ -494,7 +524,11 @@ const state = {
   alerts: [],
   piiFindings: [],
   history: [],
-  surveillanceRunning: false
+  surveillanceRunning: false,
+  compareWith: null,
+  loadedFiles: [],
+  failedFiles: [],
+  currentPageItems: []
 };
 
 // ====================================================================
@@ -597,58 +631,142 @@ function showToast(msg, type = 'info'){
 }
 
 // ====================================================================
-// CHARGEMENT
+// CHARGEMENT MULTI-FICHIERS
 // ====================================================================
+function renderLoadingFiles(statuses){
+  const html = `
+    <div class="loading-state">
+      <div class="spin"></div>
+      Chargement des fichiers JSON…
+      <div class="loading-files">
+        ${statuses.map(s => `
+          <div class="loading-file">
+            <span class="name">${s.icon} ${escapeHtml(s.label)}</span>
+            <span class="${s.status === 'ok' ? 'status-ok' : s.status === 'err' ? 'status-err' : 'status-load'}">
+              ${s.status === 'ok' ? '✓ ' + s.count + ' jeux' : s.status === 'err' ? '✗ ' + (s.error || 'erreur') : '⏳…'}
+            </span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  document.getElementById('resultsArea').innerHTML = html;
+}
+
 async function loadData(){
   const dot = document.getElementById('statusDot');
-  try {
-    const r = await fetch('army.json', { cache: 'no-store' });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    const json = await r.json();
-    if (!json.results || !Array.isArray(json.results)) throw new Error('Format invalide.');
+  const allDatasets = [];
+  const loadedFiles = [];
+  const failedFiles = [];
 
-    state.datasets = json.results;
-    dot.classList.add('ready');
+  // Affiche l'état initial
+  const statuses = JSON_FILES.map(f => ({ ...f, status: 'loading', count: 0 }));
+  renderLoadingFiles(statuses);
 
-    let totalRes = 0;
-    const formats = { csv: 0, json: 0, xlsx: 0, other: 0 };
-    state.datasets.forEach(d => {
-      getResources(d).forEach(r => { totalRes++; formats[normalizeFormat(r)]++; });
-    });
+  // Charge les fichiers en parallèle
+  await Promise.all(JSON_FILES.map(async (entry, idx) => {
+    try {
+      const r = await fetch(entry.file, { cache: 'no-store' });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const json = await r.json();
 
-    document.getElementById('tbStatus').textContent = 'OK';
-    document.getElementById('tbStatus').className = 'val green';
-    document.getElementById('tbRes').textContent = totalRes;
-    document.getElementById('tbCount').textContent = state.datasets.length;
-    document.getElementById('ivTotal').textContent = state.datasets.length;
-    document.getElementById('ivRes').textContent = totalRes;
-    document.getElementById('ivFormats').textContent = `${formats.csv} CSV · ${formats.json} JSON · ${formats.xlsx} XLSX`;
+      let results = null;
+      if (json.results && Array.isArray(json.results)) results = json.results;
+      else if (Array.isArray(json)) results = json;
+      else if (json.data && Array.isArray(json.data)) results = json.data;
+      else throw new Error('Format invalide (results[] manquant)');
 
-    // Score conformité global
-    const score = computeGlobalScore();
-    document.getElementById('ivScore').textContent = score + ' / 100';
-    document.getElementById('ivScore').className = 'v ' + (score >= 70 ? 'green' : score >= 50 ? 'amber' : 'red');
+      results.forEach(d => {
+        d._theme = entry.label;
+        d._themeIcon = entry.icon;
+        d._themeFile = entry.file;
+      });
 
-    renderCategories();
-    runSearch(1);
-  } catch(err){
+      allDatasets.push(...results);
+      loadedFiles.push(entry);
+      statuses[idx] = { ...entry, status: 'ok', count: results.length };
+    } catch(err){
+      failedFiles.push({ ...entry, error: err.message });
+      statuses[idx] = { ...entry, status: 'err', error: err.message };
+      console.warn(`⚠️ Échec chargement ${entry.file}:`, err.message);
+    }
+    renderLoadingFiles(statuses);
+  }));
+
+  state.loadedFiles = loadedFiles;
+  state.failedFiles = failedFiles;
+
+  if (!allDatasets.length){
     dot.classList.add('offline');
     document.getElementById('tbStatus').textContent = 'ERREUR';
     document.getElementById('tbStatus').className = 'val red';
     document.getElementById('resultsArea').innerHTML = `
       <div class="error-box">
-        <strong>❌ Impossible de charger army.json</strong><br>
-        ${escapeHtml(err.message)}<br><br>
-        Servez via <code>python -m http.server</code>
+        <strong>❌ Aucun fichier JSON n'a pu être chargé</strong><br><br>
+        Vérifiez que le dossier <code>json/</code> est bien accessible et que les fichiers
+        contiennent une clé <code>results</code> (tableau).<br><br>
+        Servez via <code>python -m http.server</code> depuis le dossier <code>army/</code>.
       </div>
     `;
+    return;
   }
+
+  state.datasets = allDatasets;
+  dot.classList.add('ready');
+
+  let totalRes = 0;
+  const formats = { csv: 0, json: 0, xlsx: 0, other: 0 };
+  state.datasets.forEach(d => {
+    getResources(d).forEach(r => { totalRes++; formats[normalizeFormat(r)]++; });
+  });
+
+  document.getElementById('tbStatus').textContent = loadedFiles.length + '/' + JSON_FILES.length;
+  document.getElementById('tbStatus').className = 'val ' + (failedFiles.length ? 'amber' : 'green');
+  document.getElementById('tbRes').textContent = totalRes;
+  document.getElementById('tbCount').textContent = state.datasets.length;
+  document.getElementById('ivFiles').textContent = loadedFiles.length + ' / ' + JSON_FILES.length;
+  document.getElementById('ivTotal').textContent = state.datasets.length;
+  document.getElementById('ivRes').textContent = totalRes;
+  document.getElementById('ivThemes').textContent = loadedFiles.length;
+  document.getElementById('ivFormats').textContent =
+    `${formats.csv} CSV · ${formats.json} JSON · ${formats.xlsx} XLSX`;
+
+  const score = computeGlobalScore();
+  document.getElementById('ivScore').textContent = score + ' / 100';
+  document.getElementById('ivScore').className = 'v ' + (score >= 70 ? 'green' : score >= 50 ? 'amber' : 'red');
+
+  if (failedFiles.length){
+    console.warn('Fichiers non chargés :', failedFiles);
+    showToast(`⚠️ ${failedFiles.length} fichier(s) en échec`, 'error');
+  }
+
+  populateThemeSelect();
+  renderCategories();
+  runSearch(1);
+  addToHistory('Chargement ' + loadedFiles.length + ' fichiers');
+}
+
+function populateThemeSelect(){
+  const sel = document.getElementById('themeSelect');
+  if (!sel) return;
+  sel.innerHTML = '<option value="">🌍 Tous les thèmes</option>';
+  const themes = [...new Set(state.datasets.map(d => d._theme).filter(Boolean))];
+  themes.sort((a,b) => a.localeCompare(b, 'fr'));
+  themes.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t;
+    const sample = state.datasets.find(d => d._theme === t);
+    const count = state.datasets.filter(d => d._theme === t).length;
+    opt.textContent = `${sample?._themeIcon || '📁'} ${t} (${count})`;
+    sel.appendChild(opt);
+  });
 }
 
 // ====================================================================
 // SCORE CONFORMITÉ GLOBAL
 // ====================================================================
 function computeGlobalScore(){
+  if (!state.datasets.length) return 0;
   let total = 0;
   state.datasets.forEach(d => { total += datasetScore(d); });
   return Math.round(total / state.datasets.length);
@@ -708,8 +826,13 @@ function renderCategories(){
 function runSearch(page = 1){
   const q = document.getElementById('queryInput').value.trim();
   const sort = document.getElementById('sortSelect').value;
+  const theme = document.getElementById('themeSelect')?.value || '';
   state.currentPage = page;
   let list = state.datasets;
+
+  if (theme){
+    list = list.filter(d => d._theme === theme);
+  }
 
   if (q){
     const ql = q.toLowerCase();
@@ -717,7 +840,8 @@ function runSearch(page = 1){
       getTitle(d).toLowerCase().includes(ql) ||
       (d.description||'').toLowerCase().includes(ql) ||
       getTags(d).join(' ').toLowerCase().includes(ql) ||
-      getOrg(d).toLowerCase().includes(ql)
+      getOrg(d).toLowerCase().includes(ql) ||
+      (d._theme||'').toLowerCase().includes(ql)
     );
   }
   if (state.activeCategorie){
@@ -763,12 +887,14 @@ function renderResults(items){
     const pop = getPopularity(item);
     const score = datasetScore(item);
     const scoreCls = score >= 70 ? 'csv' : score >= 40 ? 'xlsx' : 'alert';
+    const themeBadge = item._theme ? `<span class="rc-badge theme">${item._themeIcon || '📁'} ${escapeHtml(item._theme)}</span>` : '';
 
     return `
       <div class="result-card ${state.selectedDataset?.id === item.id ? 'selected' : ''}" data-id="${escapeHtml(item.id)}">
         <div class="rc-head">
           <div class="rc-title">${escapeHtml(getTitle(item))}</div>
           <div class="rc-badges">
+            ${themeBadge}
             <span class="rc-badge ${scoreCls}">📐 ${score}/100</span>
             <span class="rc-badge cat">${catObj.icon} ${escapeHtml(catObj.nom)}</span>
             ${pop ? `<span class="rc-badge pop">★ ${pop.toLocaleString('fr-FR')}</span>` : ''}
@@ -834,19 +960,16 @@ function renderExpertiseView(){
     <div class="expert-header">
       <h2>🔬 ${escapeHtml(getTitle(d))}</h2>
       <div class="sub">
+        ${d._theme ? `${d._themeIcon || '📁'} <strong>${escapeHtml(d._theme)}</strong> · ` : ''}
         🏛️ ${escapeHtml(getOrg(d) || '—')} · 📎 ${resources.length} ressource${resources.length > 1 ? 's' : ''}
         · 📅 ${formatDate(d.last_update)} · <code>${escapeHtml(datasetId)}</code>
       </div>
     </div>
   `;
 
-  // ⭐ Analyse des métadonnées du jeu (toujours affichée)
   const metaAnalysis = analyzeMetadata(d);
-
-  // ⭐ Comparaison avec un autre jeu (si sélectionné via Ctrl+clic)
   const compareHtml = state.compareWith ? renderCompare(d, state.compareWith) : '';
 
-  // Ressources
   let resourcesHtml = '';
   if (!resources.length){
     resourcesHtml = `
@@ -893,7 +1016,6 @@ function renderExpertiseView(){
     }).join('');
   }
 
-  // Actions globales
   const globalActions = `
     <div class="global-actions">
       <button class="action-btn primary" id="exportPDFBtn">📄 Export PDF</button>
@@ -906,7 +1028,6 @@ function renderExpertiseView(){
 
   setTimeout(() => initChartsForAnalyzed(resources, datasetId), 100);
 
-  // Bind buttons ressources
   document.querySelectorAll('[data-res-key].btn-sm').forEach(btn => {
     btn.addEventListener('click', async () => {
       const resKey = btn.dataset.resKey;
@@ -933,7 +1054,6 @@ function renderExpertiseView(){
     });
   });
 
-  // Actions globales
   document.getElementById('exportPDFBtn').addEventListener('click', () => exportDatasetPDF(d));
   document.getElementById('compareBtn').addEventListener('click', () => openCompareModal(d));
   document.getElementById('btnMarkForSurveillance').addEventListener('click', () => {
@@ -944,7 +1064,7 @@ function renderExpertiseView(){
 }
 
 // ====================================================================
-// ⭐ ANALYSE DE MÉTADONNÉES (pour les jeux sans ressources)
+// ANALYSE DE MÉTADONNÉES
 // ====================================================================
 function analyzeMetadata(d){
   const score = datasetScore(d);
@@ -977,7 +1097,7 @@ function analyzeMetadata(d){
 
   return `
     <div class="analysis-section">
-      <h3><span>📐 Score de conformité data.gouv.fr</span></h3>
+      <h3><span>📐 Score de conformité</span></h3>
       <div class="stat-grid">
         <div class="stat-box ${scoreCls === 'green' ? 'good' : scoreCls === 'amber' ? 'warn' : 'bad'}">
           <div class="lbl">Score global</div>
@@ -1296,7 +1416,7 @@ function generateInsights(result){
 }
 
 // ====================================================================
-// ⭐ DÉTECTION PII
+// DÉTECTION PII
 // ====================================================================
 const PII_PATTERNS = [
   { name: 'Email',          regex: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, critical: true },
@@ -1543,7 +1663,7 @@ function initChartsForResource(resKey, a){
 }
 
 // ====================================================================
-// ⭐ VUE SURVEILLANCE
+// VUE SURVEILLANCE
 // ====================================================================
 function renderAlertsView(){
   destroyCharts();
@@ -1587,7 +1707,7 @@ function renderAlertsView(){
           ${alerts.map(a => `
             <div class="alert-item ${a.severity === 'critical' ? 'critical' : ''}" data-alert-id="${escapeHtml(a.datasetId)}">
               <div class="head">
-                <div class="title">${escapeHtml(a.datasetTitle)}</div>
+                <div class="title">${a.themeIcon || ''} ${escapeHtml(a.datasetTitle)}</div>
                 <span class="severity ${a.severity === 'critical' ? 'crit' : 'warn'}">${a.severity === 'critical' ? 'CRITIQUE' : 'ATTENTION'}</span>
               </div>
               <div class="reason">${escapeHtml(a.reason)}</div>
@@ -1617,16 +1737,16 @@ function runSurveillance(){
     const tags = getTags(d);
     const res = getResources(d);
 
-    if (age > 3650) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: 'critical', reason: `⏳ Données vieilles de ${Math.round(age/365)} ans` });
-    else if (age > 1825) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: 'warning', reason: `⏳ Données anciennes (${Math.round(age/365)} ans)` });
+    if (age > 3650) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: 'critical', reason: `⏳ Données vieilles de ${Math.round(age/365)} ans` });
+    else if (age > 1825) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: 'warning', reason: `⏳ Données anciennes (${Math.round(age/365)} ans)` });
 
-    if (descLen < 50) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: descLen === 0 ? 'critical' : 'warning', reason: `📝 Description ${descLen === 0 ? 'absente' : 'trop courte (' + descLen + ' car.)'}` });
+    if (descLen < 50) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: descLen === 0 ? 'critical' : 'warning', reason: `📝 Description ${descLen === 0 ? 'absente' : 'trop courte (' + descLen + ' car.)'}` });
 
-    if (tags.length === 0) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: 'warning', reason: '🏷️ Aucun tag' });
+    if (tags.length === 0) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: 'warning', reason: '🏷️ Aucun tag' });
 
-    if (res.length === 0) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: 'warning', reason: '📎 Aucune ressource attachée' });
+    if (res.length === 0) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: 'warning', reason: '📎 Aucune ressource attachée' });
 
-    if (!d.url || !d.url.startsWith('https://')) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), severity: 'critical', reason: '🔗 URL absente ou non sécurisée' });
+    if (!d.url || !d.url.startsWith('https://')) alerts.push({ datasetId: d.id, datasetTitle: getTitle(d), themeIcon: d._themeIcon, severity: 'critical', reason: '🔗 URL absente ou non sécurisée' });
   });
   state.alerts = alerts;
   document.getElementById('tbAlerts').textContent = alerts.length;
@@ -1636,7 +1756,7 @@ function runSurveillance(){
 }
 
 // ====================================================================
-// ⭐ VUE PII
+// VUE PII
 // ====================================================================
 function renderPIIView(){
   destroyCharts();
@@ -1699,11 +1819,10 @@ function renderPIIView(){
 }
 
 // ====================================================================
-// ⭐ COMPARAISON
+// COMPARAISON
 // ====================================================================
-let compareModalOpen = false;
 function openCompareModal(d){
-  const others = state.datasets.filter(x => x.id !== d.id).slice(0, 100);
+  const others = state.datasets.filter(x => x.id !== d.id).slice(0, 200);
   const modal = document.createElement('div');
   modal.className = 'modal-overlay';
   modal.innerHTML = `
@@ -1722,6 +1841,7 @@ function openCompareModal(d){
           ${others.map(x => `
             <div class="source-item" data-compare-id="${escapeHtml(x.id)}" style="margin-bottom:4px">
               <div class="source-item-h">
+                <span class="source-item-icon">${x._themeIcon || '📁'}</span>
                 <span class="source-item-name">${escapeHtml(getTitle(x))}</span>
               </div>
             </div>
@@ -1794,24 +1914,22 @@ function renderCompare(d1, d2){
 }
 
 // ====================================================================
-// ⭐ EXPORT PDF
+// EXPORT PDF
 // ====================================================================
 function exportDatasetPDF(d){
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // En-tête
   doc.setFillColor(0, 0, 145);
   doc.rect(0, 0, 210, 30, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(16);
   doc.setFont('helvetica', 'bold');
-  doc.text('Meta Monitor Armée', 14, 15);
+  doc.text('Meta Monitor — Rapport d\'expertise', 14, 15);
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
-  doc.text('Rapport d\'expertise — ' + new Date().toLocaleString('fr-FR'), 14, 22);
+  doc.text(new Date().toLocaleString('fr-FR'), 14, 22);
 
-  // Métadonnées
   doc.setTextColor(30, 30, 30);
   let y = 45;
   doc.setFontSize(14);
@@ -1823,13 +1941,13 @@ function exportDatasetPDF(d){
 
   doc.setFontSize(10);
   doc.setFont('helvetica', 'normal');
+  if (d._theme) { doc.text(`Thème : ${d._theme}`, 14, y); y += 6; }
   doc.text(`Organisation : ${getOrg(d) || '—'}`, 14, y); y += 6;
   doc.text(`ID : ${d.id}`, 14, y); y += 6;
   doc.text(`Mise à jour : ${formatDate(d.last_update)}`, 14, y); y += 6;
   doc.text(`Popularité : ${formatNumber(getPopularity(d))}`, 14, y); y += 6;
   doc.text(`Score : ${datasetScore(d)}/100`, 14, y); y += 10;
 
-  // Description
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.text('Description', 14, y); y += 6;
@@ -1840,7 +1958,6 @@ function exportDatasetPDF(d){
   doc.text(descLines.slice(0, 15), 14, y);
   y += Math.min(descLines.length, 15) * 4.5 + 8;
 
-  // Tags
   if (getTags(d).length){
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(12);
@@ -1850,7 +1967,6 @@ function exportDatasetPDF(d){
     doc.text(getTags(d).join(' · '), 14, y); y += 10;
   }
 
-  // Ressources
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
   doc.text(`Ressources (${getResources(d).length})`, 14, y); y += 6;
@@ -1862,7 +1978,6 @@ function exportDatasetPDF(d){
     doc.text(`[${fmt}] ${(r.title || r.name || 'Ressource ' + (i+1)).slice(0, 70)}`, 18, y); y += 5;
   });
 
-  // Analyses
   if (state.expertiseCache.size){
     doc.addPage();
     y = 20;
@@ -1891,13 +2006,12 @@ function exportDatasetPDF(d){
     });
   }
 
-  // Pied de page
   const totalPages = doc.getNumberOfPages();
   for (let i = 1; i <= totalPages; i++){
     doc.setPage(i);
     doc.setFontSize(8);
     doc.setTextColor(120, 120, 120);
-    doc.text(`Page ${i} / ${totalPages} — Meta Monitor Armée`, 14, 290);
+    doc.text(`Page ${i} / ${totalPages} — Meta Monitor`, 14, 290);
   }
 
   doc.save(`rapport_${d.id}.pdf`);
@@ -1905,7 +2019,7 @@ function exportDatasetPDF(d){
 }
 
 // ====================================================================
-// ⭐ TOUT EXPERTISER
+// TOUT EXPERTISER
 // ====================================================================
 async function analyzeAll(){
   const targets = state.currentPageItems || state.datasets.slice(0, 25);
@@ -1989,6 +2103,7 @@ document.querySelectorAll('.view-tab').forEach(t => {
 document.getElementById('searchBtn').addEventListener('click', () => runSearch(1));
 document.getElementById('queryInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') runSearch(1); });
 document.getElementById('sortSelect').addEventListener('change', () => runSearch(1));
+document.getElementById('themeSelect').addEventListener('change', () => runSearch(1));
 document.getElementById('sourceSearch').addEventListener('input', renderCategories);
 
 document.getElementById('analyzeAll').addEventListener('click', analyzeAll);
